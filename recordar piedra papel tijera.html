@@ -1,0 +1,68 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script>
+let jugador1 = 0
+let triunfos = 0
+let perdidas = 0
+
+while (triunfos < 3 && perdidas < 3) {
+    let computador = Math.floor(Math.random() * 3) + 1;
+    jugador1 = prompt ("Elige: Piedra - Papel - Tijera").toLowerCase();
+ if ( jugador1 == "piedra") {
+    alert ("Jugador 1 Ha Elegido Piedra") }
+    else if ( jugador1 == "papel" ) {
+    alert ("Jugador 1 Ha Elegido Papel") }
+    else if ( jugador1 == "tijera" ){
+    alert ( "Jugador 1 Ha Elegido Tijera" )}
+    else { alert ( "Perdiste, Tienes que elegir algo")}
+
+if ( jugador1 == "piedra" && computador == 1) alert ("EMPATE\nJugador 1: Piedra\nJugador 2: Piedra")
+    else if ( jugador1 == "papel" && computador == 2 ) alert ("EMPATE\nJugador 1: Papel\nJugador 2: Papel")
+    else if ( jugador1 == "tijera" && computador == 3) alert ("EMPATE\nJugador 1: Tijera\nJugador 2: Tijera")
+
+function resultadoj (jugador1) {
+
+    let ganaj = ""
+    let eligioc = computador
+    if ( jugador1 == "piedra" && eligioc == 3 ) { ganaj = "Jugador 1: Piedra\nJugador 2: Tijera"; triunfos = triunfos + 1 }
+    else if ( jugador1 == "papel" && eligioc == 1 ) { ganaj = "Jugador 1: Papel\nJugador 2: Piedra"; triunfos = triunfos + 1 }
+    else if ( jugador1 == "tijera" && eligioc == 2 ) { ganaj = "Jugador 1: Tijera\nJugador 2: Papel"; triunfos = triunfos + 1 }
+    return ganaj}
+
+
+function resultadoc (computador){
+    let ganac = ""
+    let eligioj = jugador1
+    if ( eligioj == "piedra" && computador == 2 ) { ganac = "Jugador 1: Piedra\nJugador 2: Papel"; perdidas = perdidas + 1 }
+    else if ( eligioj == "papel" && computador == 3 ) { ganac = "Jugador 1: Papel\nJugador 2: Tijera"; perdidas = perdidas + 1 }
+    else if ( eligioj == "tijera" && computador == 1 ) { ganac = "Jugador 1: Tijera\nJugador 2: Piedra"; perdidas = perdidas + 1 }
+    return ganac}
+
+
+if ( jugador1 == "piedra" && computador == 3) {alert ("GANASTE\n" + resultadoj(jugador1))}
+    else if ( jugador1 == "papel" && computador == 1) {alert ("GANASTE\n" + resultadoj(jugador1))}
+    else if ( jugador1 == "tijera" && computador == 2) {alert ("GANASTE\n" + resultadoj(jugador1))}
+
+
+if ( jugador1 == "piedra" && computador == 2) {alert ("PERDISTE\n" + resultadoc(computador))}
+    else if ( jugador1 == "papel" && computador == 3) {alert ("PERDISTE\n" + resultadoc(computador))}
+    else if ( jugador1 == "tijera" && computador == 1) {alert ("PERDISTE\n" + resultadoc(computador))}}
+
+    if (triunfos == 3 ) { alert ("GANASTE!\nJugador 1: " + triunfos + "\nJugador 2: " + perdidas + "Rondas")}
+    else if (perdidas == 3 ) { alert ("PERDISTE!\nJugador 1: " + triunfos + "\nJugador 2: " + perdidas + "Rondas")}
+</script>
+
+
+</head>
+<body>
+
+
+
+</body>
+
+
+
+
+
+</html>
